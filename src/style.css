@@ -16,6 +16,8 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
+/* Hero section */
+
 .header {
   height: 100vh;
   width: 100%;
@@ -61,6 +63,7 @@ body {
   font-size: 1.25rem;
   line-height: 30px;
   margin-bottom: 2rem;
+  padding-right: 2rem;
   font-size: 1.25rem;
 }
 
@@ -83,4 +86,170 @@ body {
 .hero-cta:active {
   background-color: #fff;
   color: var(--primary-color-gray);
+}
+
+/* Features section */
+
+.features {
+}
+
+.features-section {
+  /* switch to -4rem when media queries are fixed */
+  margin: -2rem 10.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 7.81rem;
+  position: relative;
+}
+
+#feature--first::after {
+  content: url(/pattern-curve-top-right.svg);
+  display: block;
+  position: absolute;
+  top: 45%;
+  left: -10.3rem;
+}
+
+#feature--second::before {
+  content: url(/pattern-lines.svg);
+  position: absolute;
+  top: 45%;
+  right: 0;
+  transform: translate(75%, -50%);
+}
+
+#feature--second::after {
+  content: url(/pattern-curve-top-left.svg);
+  display: block;
+  position: absolute;
+  top: 45%;
+  right: -10.3rem;
+}
+
+.feature-image {
+  /* height: 45rem;
+  width: 33.75rem; */
+  flex: 1 0 33.75rem;
+  overflow: hidden;
+}
+
+.image--decorated {
+  position: relative;
+}
+
+.image--zoomedIn {
+  transform: scale(2);
+  object-position: 0% -3.5rem;
+}
+
+.feature-textbody {
+  height: 17.2rem;
+  color: var(--secondary-color-dark-gray);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.875rem;
+}
+
+.feature-textbody::before {
+  content: url(/public/pattern-divide.svg);
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.feature-textbody h2 {
+  width: 80%;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  line-height: 3rem;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Menu Highlights section */
+
+.menuHighlights-section {
+  background-color: var(--primary-color-gray);
+  color: #fff;
+}
+.menuHighlights {
+  position: relative;
+  padding: 4rem 10.3rem;
+  display: flex;
+  gap: 5rem;
+}
+
+.menuHighlights::before {
+  content: url(/public/pattern-divide.svg);
+  position: absolute;
+}
+
+.menuHighlights-textbody {
+  /* max-width: 27.8125rem; */
+  padding: 4rem 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.875rem;
+}
+
+.menuHighlights-textbody h2 {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: -0.5px;
+}
+.menuHighlights-items {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menuHighlights-item {
+  padding-bottom: 1.5rem;
+  display: flex;
+  gap: 4rem;
+  border-bottom: 2px solid rgba(92, 103, 121, 0.3);
+}
+
+.menuHighlights-items .menuHighlights-item:last-child {
+  border-bottom: none;
+}
+
+.item-image {
+  width: 8rem;
+  height: 6rem;
+  display: flex;
+}
+
+.item-image::after {
+  content: url(/pattern-divide.svg);
+  margin: 1rem 0 0 -2.5rem;
+}
+
+.item-image img {
+  position: relative;
+  z-index: 999;
+}
+
+.item-textbody {
+  width: 21.875rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.625rem;
+}
+
+.item-textbody h3 {
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.25px;
 }

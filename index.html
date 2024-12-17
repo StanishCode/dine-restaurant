@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/dine.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=League+Spartan:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
-    <title>Vite App</title>
+    <title>Home</title>
   </head>
   <body>
     <header class="header">
@@ -19,13 +19,107 @@
         <div class="hero-text">
           <h2 class="hero-header">Exquisite dining since 1989</h2>
           <p class="hero-textbody">
-            Experience our seasonal menu in beautiful country surroundings.Eat
+            Experience our seasonal menu in beautiful country surroundings. Eat
             the freshest producefrom the comfort of our farmhouse.
           </p>
           <a class="hero-cta" href="#">Book a table</a>
         </div>
       </div>
     </header>
+
+    <section class="features">
+      <div class="features-section">
+        <div class="feature-item" id="feature--first">
+          <figure class="feature-image">
+            <img
+              class="image--zoomedIn"
+              src="/images/enjoyable-place-desktop.jpg"
+              alt=""
+            />
+          </figure>
+          <div class="feature-textbody">
+            <h2>Enjoyable place for all the family</h2>
+            <p>
+              Our relaxed surroundings make dining with us a great experience
+              for everyone. We can even arrange a tour of the farm before your
+              meal.
+            </p>
+          </div>
+        </div>
+        <div class="feature-item" id="feature--second">
+          <div class="feature-textbody">
+            <h2>The most locally sourced food</h2>
+            <p>
+              All our ingredients come directly from our farm or local fishery.
+              So you can be sure that you're eating the freshest, most suitable
+              food.
+            </p>
+          </div>
+          <figure class="feature-image">
+            <img src="/images/locally-sourced-desktop.jpg" alt="" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="menuHighlights-section">
+      <div class="menuHighlights">
+        <div class="menuHighlights-textbody">
+          <h2>A few highlights from our menu</h2>
+          <p>
+            We cater for all dietary requirements, but here's a glimpse at some
+            of our diner's favourites. Our menu is revamped every season.
+          </p>
+        </div>
+        <div class="menuHighlights-items">
+          <div class="menuHighlights-item">
+            <figure class="item-image">
+              <img
+                src="/public/images/salmon-desktop-tablet.jpg"
+                alt="seared salmon fillet"
+              />
+            </figure>
+            <div class="item-textbody">
+              <h3>Seared Salmon Fillet</h3>
+              <p>
+                Our locally sourced salmon served with a refreshing buckwheat
+                summer salad.
+              </p>
+            </div>
+          </div>
+          <div class="menuHighlights-item">
+            <figure class="item-image">
+              <img
+                src="/images/beef-desktop-tablet.jpg"
+                alt="rosemary fillet mignon"
+              />
+            </figure>
+            <div class="item-textbody">
+              <h3>Rosemary Fillet Mignon</h3>
+              <p>
+                Our prime beef served to your taste with a delicious choice of
+                seasonal sides.
+              </p>
+            </div>
+          </div>
+          <div class="menuHighlights-item">
+            <figure class="item-image">
+              <img
+                src="/public/images/salmon-desktop-tablet.jpg"
+                alt="summer fruit chocolate mousse"
+              />
+            </figure>
+            <div class="item-textbody">
+              <h3>Summer Fruit Chocolate Mousse</h3>
+              <p>
+                Creamy mousse combined with summer fruits and dark chocolate
+                shavings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
