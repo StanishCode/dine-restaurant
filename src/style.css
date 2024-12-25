@@ -61,6 +61,7 @@ body {
 
 .hero-textbody {
   font-size: 1.25rem;
+  font-weight: 300;
   line-height: 30px;
   margin-bottom: 2rem;
   padding-right: 2rem;
@@ -73,8 +74,8 @@ body {
   color: #fff;
   text-decoration: none;
   border: 1px solid #fff;
-  font-size: 1.06rem;
-  font-weight: 600;
+  font-size: 1.0625rem;
+  font-weight: 500;
   padding: 1rem 3rem;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -114,6 +115,10 @@ body {
   position: absolute;
   top: 45%;
   left: -10.3rem;
+}
+
+#feature--first .feature-image {
+  box-shadow: 0 10px 70px rgba(0, 0, 0, 0.5);
 }
 
 #feature--second::before {
@@ -252,4 +257,204 @@ body {
   font-weight: 700;
   line-height: 1.5rem;
   letter-spacing: -0.25px;
+}
+
+/* Events section */
+
+.events-section {
+}
+
+.events {
+  position: relative;
+  margin: 4rem 10.3rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.events::before {
+  content: url(/pattern-lines.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-25%, -50%);
+  z-index: 1000;
+}
+
+.events::after {
+  content: url(/pattern-curve-top-right.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -20%);
+}
+
+.events-image {
+  display: none;
+}
+
+.events-image.events-image--active {
+  display: block;
+}
+
+.events-image img {
+  position: relative;
+  z-index: 999;
+  box-shadow: 0 10px 70px rgba(0, 0, 0, 0.5);
+}
+
+.events-textbody {
+  padding: 2.5rem 5rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.875rem;
+}
+
+.events-textbody .event-description h2 {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: -0.5px;
+}
+
+.events-textbody .event-description p {
+  margin-bottom: 3rem;
+}
+
+.events-textbody .event-description {
+  display: none;
+}
+
+.event-description.event-description--active {
+  display: inline-block;
+}
+
+.events-cta:link,
+.events-cta:visited {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  letter-spacing: 2.5px;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 1rem 3rem;
+  color: #fff;
+  background-color: #111;
+  text-decoration: none;
+  border: solid 1px #111;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.events-cta:hover,
+.events-cta:active {
+  color: #111;
+  background-color: #fff;
+}
+
+.events-selections input {
+  display: none;
+}
+
+.events-selections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.events-selections label {
+  position: relative;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.events-selections label:hover {
+  opacity: 100%;
+}
+
+.events-selections label::before {
+  /* TODO get rid of mouse events */
+  content: url(/public/pattern-divide.svg);
+  position: absolute;
+  opacity: 0;
+  transform: scaleX(1.5) translateX(-110%);
+  z-index: -999;
+}
+
+.events-selections .events-selection--active label,
+.events-selections .events-selection--active label::before {
+  opacity: 100%;
+}
+
+/* Call to action section */
+
+.callToAction-section {
+  height: 15rem;
+  background: url(/images/ready-bg-desktop.jpg);
+  display: flex;
+  align-items: center;
+}
+
+.callToAction {
+  width: 100%;
+  padding: 4rem 10.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.callToAction h2 {
+  font-size: 3rem;
+  line-height: 3rem;
+  letter-spacing: -0.5px;
+}
+
+.callToAction a:link,
+.callToAction a:visited {
+  color: inherit;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border: solid 1px #fff;
+  transition: all 0.3s;
+}
+
+.callToAction a:hover,
+.callToAction a:active {
+  color: #111;
+  background-color: #fff;
+}
+
+/* Footer */
+
+footer {
+  padding: 4rem 10.3rem;
+  color: #fff;
+  background-color: #111;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-container p {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
