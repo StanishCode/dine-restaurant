@@ -1,11 +1,22 @@
 import "./style.css";
 import dineLogo from "/dine.svg";
+import topLeftCurve from "/pattern-curve-top-left.svg";
+import topRightCurve from "/pattern-curve-top-right.svg";
 // import javascriptLogo from "./javascript.svg";
 // import viteLogo from "/vite.svg";
 // import { setupCounter } from "./counter.js";
 
 document.querySelector("#dine-logo").innerHTML = `<img src="${dineLogo}" />`;
 document.querySelector(".footer-logo").innerHTML = `<img src="${dineLogo}" />`;
+document.querySelector(
+  "#feature-background--second"
+).innerHTML = `<img src="${topLeftCurve}" />`;
+document.querySelector(
+  "#feature-background--first"
+).innerHTML = `<img src="${topRightCurve}" />`;
+document.querySelector(
+  ".events-background"
+).innerHTML = `<img src="${topRightCurve}" />`;
 
 const eventSelections = document.querySelectorAll(".events-selection");
 const eventImages = document.querySelectorAll(".events-image");

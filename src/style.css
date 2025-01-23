@@ -14,25 +14,28 @@
 
 body {
   font-family: "League Spartan", sans-serif;
+  overflow-x: hidden;
 }
 
 /* Hero section */
 
 .header {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  padding-bottom: 6rem;
   background: linear-gradient(
       to right,
       var(--primary-color-gray) 0 40%,
       rgba(92, 103, 121, 0.1) 40%
     ),
-    url("/images/hero-bg-desktop.jpg");
+    no-repeat url("/images/hero-bg-desktop.jpg");
   background-size: cover;
+  background-position: 50%;
 }
 
 .hero-section {
   color: #fff;
-  width: 40%;
+  max-width: 40%;
   margin-left: 10.3rem;
   padding-top: 4rem;
 }
@@ -60,6 +63,7 @@ body {
 }
 
 .hero-textbody {
+  max-width: 27.8125rem;
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 30px;
@@ -76,7 +80,7 @@ body {
   border: 1px solid #fff;
   font-size: 1.0625rem;
   font-weight: 500;
-  padding: 1rem 3rem;
+  padding: 1.5rem 3rem;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   cursor: pointer;
@@ -96,7 +100,7 @@ body {
 
 .features-section {
   /* switch to -4rem when media queries are fixed */
-  margin: -2rem 10.3rem;
+  margin: -4rem 10.3rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -107,14 +111,21 @@ body {
   align-items: center;
   gap: 7.81rem;
   position: relative;
+  z-index: 999;
 }
 
-#feature--first::after {
-  content: url(/pattern-curve-top-right.svg);
-  display: block;
+#feature-background--first {
+  width: 100%;
+  height: 20rem;
   position: absolute;
   top: 45%;
   left: -10.3rem;
+  z-index: -999;
+}
+
+#feature-background--first img {
+  width: 100%;
+  height: 100%;
 }
 
 #feature--first .feature-image {
@@ -126,15 +137,34 @@ body {
   position: absolute;
   top: 45%;
   right: 0;
-  transform: translate(75%, -50%);
+  transform: translate(50%, -50%);
+  z-index: 1000;
 }
 
-#feature--second::after {
+/* #feature--second::after {
   content: url(/pattern-curve-top-left.svg);
   display: block;
+  width: 75%;
+  height: 20rem;
   position: absolute;
-  top: 45%;
+  background-size: 100% 100%;
+  top: 47.5%;
   right: -10.3rem;
+  z-index: 999;
+} */
+
+#feature-background--second {
+  width: 100%;
+  height: 20rem;
+  position: absolute;
+  top: 47.5%;
+  right: -10.3rem;
+  z-index: 999;
+}
+
+#feature-background--second img {
+  width: 100%;
+  height: 100%;
 }
 
 .feature-image {
@@ -155,6 +185,8 @@ body {
 
 .feature-textbody {
   height: 17.2rem;
+  margin-bottom: 2rem;
+  flex-shrink: 2;
   color: var(--secondary-color-dark-gray);
   font-size: 1.25rem;
   font-weight: 400;
@@ -185,9 +217,10 @@ body {
 }
 .menuHighlights {
   position: relative;
-  padding: 4rem 10.3rem;
+  padding: 8rem 10.3rem 4rem 10.3rem;
   display: flex;
   gap: 5rem;
+  flex: 1 1 auto;
 }
 
 .menuHighlights::before {
@@ -201,6 +234,7 @@ body {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.875rem;
+  flex: 2 2 auto;
 }
 
 .menuHighlights-textbody h2 {
@@ -245,7 +279,7 @@ body {
 }
 
 .item-textbody {
-  width: 21.875rem;
+  max-width: 21.875rem;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.625rem;
@@ -280,16 +314,24 @@ body {
   z-index: 1000;
 }
 
-.events::after {
-  content: url(/pattern-curve-top-right.svg);
+.events-background {
+  width: 100%;
+  height: 20rem;
   position: absolute;
   top: 0;
   left: 0;
   transform: translate(-50%, -20%);
 }
 
+.events-background img {
+  width: 100%;
+  height: 100%;
+}
+
 .events-image {
   display: none;
+  height: 45rem;
+  flex: 1 0 33.75rem;
 }
 
 .events-image.events-image--active {
@@ -298,7 +340,10 @@ body {
 
 .events-image img {
   position: relative;
+  height: 100%;
+  width: 100%;
   z-index: 999;
+  object-fit: cover;
   box-shadow: 0 10px 70px rgba(0, 0, 0, 0.5);
 }
 
@@ -422,6 +467,7 @@ body {
   color: inherit;
   text-decoration: none;
   padding: 1rem 3rem;
+  flex-shrink: 0;
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.75rem;
@@ -458,3 +504,142 @@ footer {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+@media (max-width: 1295px) {
+  .events-cta:link,
+  .events-cta:visited {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 1228px) {
+  #feature--second .feature-textbody {
+    align-self: start;
+  }
+}
+
+@media (max-width: 1178px) {
+  .callToAction a:link,
+  .callToAction a:visited {
+    padding: 1rem 3rem;
+  }
+}
+
+@media (max-width: 1115px) {
+  .hero-section {
+    margin-left: 5.15rem;
+  }
+
+  .features-section {
+    margin: -4rem 5.15rem;
+  }
+  .feature-image {
+    flex: 1 0 27rem;
+  }
+
+  #feature--first::after {
+    left: -5.15rem;
+  }
+
+  #feature-background--second {
+    right: -5.15rem;
+  }
+
+  .menuHighlights {
+    padding: 8rem 5.15rem 4rem 5.15rem;
+  }
+
+  .events {
+    margin: 4rem 5.15rem;
+  }
+
+  .events-image {
+    flex: 1 0 27rem;
+  }
+
+  .callToAction {
+    padding: 4rem 5.15rem;
+  }
+
+  footer {
+    padding: 4rem 5.15rem;
+  }
+}
+
+@media (max-width: 1107px) {
+  .events-textbody {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 854px) {
+  .feature-item {
+    gap: 2.81rem;
+  }
+
+  .events-textbody {
+    padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 62rem;
+    background: linear-gradient(
+        to top,
+        var(--primary-color-gray) 0 62.5%,
+        rgba(92, 103, 121, 0.1) 62.5%
+      ),
+      no-repeat url("/images/hero-bg-tablet.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-section {
+    color: #fff;
+    max-width: 43.0625rem;
+    margin-bottom: 3rem;
+    margin-left: 0;
+    padding-top: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-header {
+    width: 50%;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: -0.6px;
+    line-height: 64px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* TODO: adjust background shape sizes to be smaller on smaller screens */
+/* @media (max-width: 975px) {
+  #feature--first::after,
+  #feature--second::after {
+    width: 44.75rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #feature--second::after {
+    right: 0;
+  }
+} */
