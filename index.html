@@ -31,11 +31,20 @@
       <div class="features-section">
         <div class="feature-item" id="feature--first">
           <figure class="feature-image">
-            <img
-              class="image--zoomedIn"
-              src="/images/enjoyable-place-desktop.jpg"
-              alt=""
-            />
+            <picture>
+              <source
+                srcset="/images/enjoyable-place-tablet.jpg"
+                media="(max-width: 820px)"
+              />
+              <img
+                class="image--zoomedIn"
+                srcset="
+                  /images/enjoyable-place-desktop.jpg    1x,
+                  /images/enjoyable-place-desktop@2x.jpg 2x
+                "
+                alt=""
+              />
+            </picture>
           </figure>
           <div class="feature-textbody">
             <h2>Enjoyable place for all the family</h2>
@@ -57,7 +66,23 @@
             </p>
           </div>
           <figure class="feature-image">
-            <img src="/images/locally-sourced-desktop.jpg" alt="" />
+            <picture>
+              <source
+                srcset="
+                  /images/locally-sourced-tablet.jpg    1x,
+                  /images/locally-sourced-tablet@2x.jpg 2x
+                "
+                media="(max-width: 820px)"
+              />
+              <img
+                class="feature-image--2"
+                srcset="
+                  /images/locally-sourced-desktop.jpg    1x,
+                  /images/locally-sourced-desktop@2x.jpg 2x
+                "
+                alt=""
+              />
+            </picture>
           </figure>
           <div id="feature-background--second"></div>
         </div>
@@ -126,13 +151,58 @@
     <section class="events-section">
       <div class="events">
         <figure class="events-image events-image--active">
-          <img src="/images/family-gathering-desktop.jpg" alt="" />
+          <picture>
+            <source
+              srcset="
+                /images/family-gathering-tablet.jpg    1x,
+                /images/family-gathering-tablet@2x.jpg 2x
+              "
+              media="(max-width: 820px)"
+            />
+            <img
+              srcset="
+                /images/family-gathering-desktop.jpg    1x,
+                /images/family-gathering-desktop@2x.jpg 2x
+              "
+              alt=""
+            />
+          </picture>
         </figure>
         <figure class="events-image">
-          <img src="/images/special-events-desktop.jpg" alt="" />
+          <picture>
+            <source
+              srcset="
+                /images/special-events-tablet.jpg    1x,
+                /images/special-events-tablet@2x.jpg 2x
+              "
+              media="(max-width: 820px)"
+            />
+            <img
+              srcset="
+                /images/special-events-desktop.jpg    1x,
+                /images/special-events-desktop@2x.jpg 2x
+              "
+              alt=""
+            />
+          </picture>
         </figure>
         <figure class="events-image">
-          <img src="/images/social-events-desktop.jpg" alt="" />
+          <picture>
+            <source
+              srcset="
+                /images/social-events-tablet.jpg    1x,
+                /images/social-events-tablet@2x.jpg 2x
+              "
+              media="(max-width: 820px)"
+            />
+            <img
+              srcset="
+                /images/social-events-desktop.jpg    1x,
+                /images/social-events-desktop@2x.jpg 2x
+              "
+              alt=""
+            />
+          </picture>
         </figure>
         <div class="events-textbody">
           <div class="event-description event-description--active">
@@ -195,15 +265,17 @@
     <footer>
       <div class="footer-container">
         <a href="" class="footer-logo"></a>
-        <div class="contact">
-          <p>Marthwaite, Sedbergh</p>
-          <p>Cumbria</p>
-          <p>+00 44 123 4567</p>
-        </div>
-        <div class="hours">
-          <p>Open Times</p>
-          <p>Mon - Fri: 9:00 AM - 10:00 PM</p>
-          <p>Sat - Sun: 9:00 AM - 11:30 PM</p>
+        <div class="footer-info">
+          <div class="contact">
+            <p>Marthwaite, Sedbergh</p>
+            <p>Cumbria</p>
+            <p>+00 44 123 4567</p>
+          </div>
+          <div class="hours">
+            <p>Open Times</p>
+            <p>Mon - Fri: 9:00 AM - 10:00 PM</p>
+            <p>Sat - Sun: 9:00 AM - 11:30 PM</p>
+          </div>
         </div>
       </div>
     </footer>
