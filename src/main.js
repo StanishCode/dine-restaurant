@@ -6,7 +6,9 @@ import topRightCurve from "/pattern-curve-top-right.svg";
 // import viteLogo from "/vite.svg";
 // import { setupCounter } from "./counter.js";
 
-document.querySelector("#dine-logo").innerHTML = `<img src="${dineLogo}" />`;
+document.querySelector(
+  "#dine-logo--home"
+).innerHTML = `<img src="${dineLogo}" />`;
 document.querySelector(".footer-logo").innerHTML = `<img src="${dineLogo}" />`;
 document.querySelector(
   "#feature-background--second"

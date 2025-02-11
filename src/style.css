@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Hero section */
+/* Home - Hero section */
 
 .header {
   min-height: 100vh;
@@ -271,9 +271,10 @@ body {
 }
 
 .item-image {
-  width: 8rem;
-  height: 6rem;
+  max-width: 10rem;
+  max-height: 6rem;
   display: flex;
+  flex: 1 0 10rem;
 }
 
 .item-image::after {
@@ -282,6 +283,8 @@ body {
 }
 
 .item-image img {
+  width: 100%;
+  height: 100%;
   position: relative;
   z-index: 999;
 }
@@ -414,6 +417,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  /* display: grid;
+  grid-template-rows: repeat(3, max-content); */
 }
 
 .events-selections label {
@@ -511,6 +516,41 @@ footer {
   line-height: 1.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+/* Reservations - Hero section */
+.reserveHeader {
+  height: 37.5rem;
+  max-width: 100%;
+  background: url(/images/reservations/hero-bg-desktop.jpg) no-repeat;
+}
+
+/* .input-container {
+  border-bottom: solid 1px #979797;
+} */
+
+.reserveForm input {
+  border: none;
+  border-bottom: solid 1px #979797;
+}
+
+.reserveForm .inputContainer.error,
+.inputContainer.error input::placeholder,
+.dateContainer.error,
+.dateContainer.error input::placeholder,
+.timeContainer.error,
+.timeContainer.error input::placeholder {
+  color: #b54949;
+}
+
+.inputContainer.error input,
+.dateContainer.error input,
+.timeContainer.error input {
+  border-bottom: solid 1px #b54949;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 1295px) {
@@ -698,8 +738,12 @@ footer {
     align-items: center;
   }
 
+  .hero-textbody {
+    padding-left: 2rem;
+  }
+
   .features-section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
   }
 
   #feature--first {
@@ -755,6 +799,7 @@ footer {
 
   .feature-textbody h2 {
     margin-inline: auto;
+    text-align: center;
   }
 
   .menuHighlights {
@@ -832,11 +877,203 @@ footer {
     gap: 2rem;
   }
 
-  /* TODO: media query for events selections @600px */
-
   /* .callToAction h2 {
     max-width: 38.4375rem;
   } */
+}
+
+/* TODO: media query for events selections @600px */
+
+@media (max-width: 600px) {
+  #feature--second .feature-image::before {
+    right: 10%;
+  }
+
+  .events-selections {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+/* TODO: work on mobile image shadows */
+@media (max-width: 430px) {
+  h2 {
+    font-size: 2rem;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+
+  .header {
+    height: 48rem;
+    background: linear-gradient(
+        to top,
+        var(--primary-color-gray) 0 67%,
+        rgba(92, 103, 121, 0.1) 67%
+      ),
+      no-repeat url(/images/hero-bg-mobile.jpg);
+    background-size: cover;
+  }
+
+  .hero-section {
+    gap: 1rem;
+  }
+
+  #dine-logo img {
+    width: 5.15rem;
+    height: 2rem;
+  }
+
+  .hero-header {
+    width: 60%;
+    font-size: 2rem;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+
+  .hero-textbody {
+    font-size: 1rem;
+    line-height: 26px;
+    padding-inline: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .features-section {
+    gap: 4rem;
+    margin-inline: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .feature-textbody h2 {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
+  .feature-textbody {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  #feature-background--first,
+  #feature-background--second,
+  .feature-image::before {
+    display: none;
+  }
+
+  #feature--second {
+    gap: 4.81rem;
+  }
+
+  .feature-image--2 {
+    box-shadow: 0 10px 70px rgba(0, 0, 0, 0.5);
+  }
+
+  .menuHighlights {
+    padding-inline: 1.5rem;
+  }
+
+  .menuHighlights-items {
+    padding: 6rem 0 2rem 0;
+  }
+
+  .menuHighlights-textbody h2 {
+    font-size: 2rem;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+
+  .menuHighlights-textbody {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .menuHighlights-item {
+    padding-bottom: 3.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .menuHighlights-items .menuHighlights-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .item-image {
+    max-height: 15.3125rem;
+    max-width: 20.4375rem;
+    flex: 1 1 15.3125rem;
+  }
+
+  .item-image::after {
+    display: none;
+  }
+
+  .item-textbody {
+    text-align: center;
+  }
+
+  .events {
+    margin-inline: 1.5rem;
+  }
+
+  .events::before {
+    display: none;
+  }
+
+  .events-background {
+    display: none;
+  }
+
+  .events-textbody .event-description h2 {
+    font-size: 2rem;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+
+  .event-description p {
+    font-size: 1rem;
+    line-height: 26px;
+  }
+
+  .events-textbody {
+    padding: 0;
+  }
+
+  .events-cta {
+    height: 4rem;
+    width: 15.3125rem;
+    text-align: center;
+  }
+
+  .events-selections {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .events-selections label {
+    padding-bottom: 0.5rem;
+  }
+
+  .callToAction-section {
+    height: 23.4375rem;
+    background: url(/images/ready-bg-mobile.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  .callToAction h2 {
+    width: 70%;
+    font-size: 2rem;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+
+  .footer-container {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
 }
 
 /* TODO: adjust background shape sizes to be smaller on smaller screens */

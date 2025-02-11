@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=League+Spartan:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Reservations</title>
+  </head>
+  <body>
+    <header class="reserveHeader">
+      <div class="reserveHero">
+        <a class="logo" id="dine-logo--reserve" href="#"></a>
+        <div class="reserveHero-textbody">
+          <h1>Reservations</h1>
+          <p>
+            We can't wait to host you. If you have any special requirements
+            please feel free to call us on the phone number below. We'll be
+            happy to accommodate you.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <form action="" class="reserveForm">
+        <div class="inputContainer">
+          <input type="text" name="fullName" id="fullName" placeholder="Name" />
+        </div>
+        <div class="inputContainer">
+          <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+        <fieldset class="dateContainer">
+          <div class="dateLegend">
+            <legend>Pick a date</legend>
+          </div>
+          <input type="text" name="month" id="month" placeholder="MM" />
+          <input type="text" name="day" id="day" placeholder="DD" />
+          <input type="text" name="year" id="year" placeholder="YYYY" />
+        </fieldset>
+        <fieldset class="timeContainer">
+          <div class="timeLegend">
+            <legend>Pick a time</legend>
+          </div>
+          <input type="text" name="hour" id="hour" />
+          <input type="text" name="minute" id="minute" />
+          <div class="custom-dropdown">
+            <button class="dropdown-btn">
+              <span class="dropdown-value">AM</span>
+              <span class="dropdown-arrow"></span>
+            </button>
+            <ul class="dropdown-menu hidden">
+              <li>AM</li>
+              <li>PM</li>
+            </ul>
+          </div>
+        </fieldset>
+        <div class="partySize">
+          <button class="increment"></button>
+          <span>1</span>
+          <span>person</span>
+          <button class="decrement"></button>
+        </div>
+        <button>Submit</button>
+      </form>
+    </main>
+    <script type="module" src="reservation.js"></script>
+  </body>
+</html>
