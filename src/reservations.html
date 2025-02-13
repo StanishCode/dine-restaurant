@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/dine.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,48 +26,83 @@
         </div>
       </div>
     </header>
-    <main>
-      <form action="" class="reserveForm">
-        <div class="inputContainer">
-          <input type="text" name="fullName" id="fullName" placeholder="Name" />
-        </div>
-        <div class="inputContainer">
-          <input type="email" name="email" id="email" placeholder="Email" />
-        </div>
-        <fieldset class="dateContainer">
-          <div class="dateLegend">
-            <legend>Pick a date</legend>
+    <main class="reserveMain">
+      <div class="reserveContainer">
+        <form action="" class="reserveForm">
+          <div class="inputContainer">
+            <input
+              type="text"
+              name="fullName"
+              id="fullName"
+              placeholder="Name"
+            />
           </div>
-          <input type="text" name="month" id="month" placeholder="MM" />
-          <input type="text" name="day" id="day" placeholder="DD" />
-          <input type="text" name="year" id="year" placeholder="YYYY" />
-        </fieldset>
-        <fieldset class="timeContainer">
-          <div class="timeLegend">
-            <legend>Pick a time</legend>
+          <div class="inputContainer">
+            <input type="email" name="email" id="email" placeholder="Email" />
           </div>
-          <input type="text" name="hour" id="hour" />
-          <input type="text" name="minute" id="minute" />
-          <div class="custom-dropdown">
-            <button class="dropdown-btn">
-              <span class="dropdown-value">AM</span>
-              <span class="dropdown-arrow"></span>
-            </button>
-            <ul class="dropdown-menu hidden">
-              <li>AM</li>
-              <li>PM</li>
-            </ul>
+          <fieldset class="dateContainer">
+            <div class="dateLegend">
+              <legend>Pick a date</legend>
+            </div>
+            <div class="date-inputContainer">
+              <input type="text" name="month" id="month" placeholder="MM" />
+              <input type="text" name="day" id="day" placeholder="DD" />
+              <input type="text" name="year" id="year" placeholder="YYYY" />
+            </div>
+          </fieldset>
+          <fieldset class="timeContainer">
+            <div class="timeLegend">
+              <legend>Pick a time</legend>
+            </div>
+            <div class="time-inputContainer">
+              <input type="text" name="hour" id="hour" placeholder="09" />
+              <input type="text" name="minute" id="minute" placeholder="00" />
+              <div class="custom-dropdown">
+                <button class="dropdown-btn">
+                  <span class="dropdown-value">AM</span>
+                  <span class="dropdown-arrow"></span>
+                </button>
+                <ul class="dropdown-menu hidden">
+                  <li class="dropdown-item">
+                    <span class="check"></span>
+                    <span class="item-value">AM</span>
+                  </li>
+                  <li class="dropdown-item check--hidden">
+                    <span class="check"></span>
+                    <span class="item-value">PM</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+          <div class="partySize">
+            <button class="increment"></button>
+            <span>1</span>
+            <span>person</span>
+            <button class="decrement"></button>
           </div>
-        </fieldset>
-        <div class="partySize">
-          <button class="increment"></button>
-          <span>1</span>
-          <span>person</span>
-          <button class="decrement"></button>
-        </div>
-        <button>Submit</button>
-      </form>
+          <button>Submit</button>
+        </form>
+      </div>
     </main>
+
+    <footer>
+      <div class="footer-container">
+        <a href="" class="footer-logo"></a>
+        <div class="footer-info">
+          <div class="contact">
+            <p>Marthwaite, Sedbergh</p>
+            <p>Cumbria</p>
+            <p>+00 44 123 4567</p>
+          </div>
+          <div class="hours">
+            <p>Open Times</p>
+            <p>Mon - Fri: 9:00 AM - 10:00 PM</p>
+            <p>Sat - Sun: 9:00 AM - 11:30 PM</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="reservation.js"></script>
   </body>
 </html>

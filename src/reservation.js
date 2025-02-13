@@ -2,10 +2,20 @@ import "./style.css";
 import dineLogo from "/dine.svg";
 import topLeftCurve from "/pattern-curve-top-left.svg";
 import topRightCurve from "/pattern-curve-top-right.svg";
+import arrowIcon from "/icons/icon-arrow.svg";
+import checkMark from "/icons/icon-check.svg";
 
 document.querySelector(
   "#dine-logo--reserve"
 ).innerHTML = `<img src="${dineLogo}" />`;
+
+document.querySelector(
+  ".dropdown-arrow"
+).innerHTML = `<img src="${arrowIcon}" />`;
+
+document.querySelectorAll(".check").forEach((item) => {
+  item.innerHTML = `<img src="${checkMark}" />`;
+});
 
 const fullName = document.querySelector("#fullName");
 const nameContainerClasses = fullName.closest("div").classList;
@@ -20,6 +30,11 @@ const hour = document.querySelector("#hour");
 const minute = document.querySelector("#minute");
 const timeContainer = document.querySelector(".timeContainer");
 const timeLegend = document.querySelector(".timeLegend");
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownValue = document.querySelector(".dropdown-value");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+const dropdownArrow = document.querySelector(".dropdown-arrow");
+const dropdownItems = document.querySelectorAll(".dropdown-item");
 const reserveForm = document.querySelector(".reserveForm");
 
 reserveForm.addEventListener("submit", (event) => {
@@ -64,7 +79,7 @@ reserveForm.addEventListener("submit", (event) => {
       if (!dateContainer.classList.contains("error")) {
         dateContainer.classList.add("error");
         dateLegend.insertAdjacentHTML(
-          "afterend",
+          "beforeend",
           `<span class="errorMessage">This field is required</span>`
         );
       }
@@ -74,7 +89,7 @@ reserveForm.addEventListener("submit", (event) => {
       if (!timeContainer.classList.contains("error")) {
         timeContainer.classList.add("error");
         timeLegend.insertAdjacentHTML(
-          "afterend",
+          "beforeend",
           `<span class="errorMessage">This field is required</span>`
         );
       }
@@ -105,4 +120,35 @@ reserveForm.addEventListener("focusout", (event) => {
   if (childErrorMEssage !== null) {
     childErrorMEssage.remove();
   }
+});
+
+/* TODO: need to work on handling case where user unfocuses without selecting */
+dropdownBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  if (!event.target.closest("button")) {
+    return;
+  }
+
+  dropdownArrow.classList.toggle("dropdown-arrow--active");
+  dropdownMenu.classList.toggle("hidden");
+});
+
+dropdownMenu.addEventListener("click", (event) => {
+  //only activate event if user clicks on li
+  const currentSelection = event.target.closest("li");
+  if (!currentSelection) {
+    return;
+  }
+
+  //extract li value and add check hidden to all lis
+  const itemValue = currentSelection.querySelector(".item-value").textContent;
+
+  dropdownItems.forEach((item) => {
+    item.classList.add("check--hidden");
+  });
+  //remove check hidden from selected li, make dropdown hidden, and change current value to selected value
+  currentSelection.classList.remove("check--hidden");
+  dropdownMenu.classList.toggle("hidden");
+  dropdownValue.innerHTML = itemValue;
 });
