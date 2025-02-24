@@ -519,44 +519,76 @@ footer {
 }
 
 /* Reservations - Hero section */
+
 .reserveHeader {
   height: 37.5rem;
   max-width: 100%;
   background: url(/images/reservations/hero-bg-desktop.jpg) no-repeat;
 }
 
+.reserveHero {
+  width: 37%;
+  padding: 4rem 0 0 10.3rem;
+  color: #fff;
+}
+
+.reserveHero-textbody h1 {
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 5rem;
+  letter-spacing: -1px;
+}
+
+.reserveHero-textbody p {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+
 .reserveMain {
   background: url(/pattern-curve-bottom-right.svg) no-repeat;
-  background-position: -100%, 50%;
+  background-size: 70% 100%;
 }
 
 .reserveContainer {
-  position: relative;
   height: 20rem;
   margin-inline: 10.3rem;
+  display: flex;
+  justify-content: end;
+  align-items: start;
 }
 
-/* .input-container {
-  border-bottom: solid 1px #979797;
-} */
+.reserve-positionContainer {
+  position: relative;
+}
 
-/* TODO: adjust form input text size to same as placeholder text size */
-.reserveForm {
+.reserve-positionContainer::before {
+  content: url(/pattern-lines.svg);
   position: absolute;
-  top: -75%;
-  right: 0;
+  bottom: -15%;
+  left: -15%;
+  z-index: -1;
+}
+
+.reserveForm {
   max-width: 33.75rem;
   /* height: 34.0625rem; */
+  margin-top: -20rem;
   padding: 3rem;
   background: #fff;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 999;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+.reserveForm input {
+  font-size: 1.25rem;
+}
+
 .reserveForm input,
 .custom-dropdown {
+  font-family: inherit;
   border: none;
   border-bottom: solid 1px #979797;
 }
@@ -601,6 +633,11 @@ fieldset input,
   border-bottom: solid 1px #b54949;
 }
 
+.error #email,
+.error #fullName {
+  margin-bottom: 0.5rem;
+}
+
 fieldset,
 .dropdown-btn {
   border: none;
@@ -616,6 +653,12 @@ fieldset,
 .dateLegend,
 .timeLegend {
   flex: 1 0 auto;
+}
+
+legend {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
 }
 
 .date-inputContainer,
@@ -683,6 +726,62 @@ fieldset,
 .check--hidden .check {
   opacity: 0;
 }
+
+.partySize {
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.25px;
+  border-bottom: solid 1px #8e8e8e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.partySize button {
+  border: none;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.increment {
+}
+.decrement {
+}
+
+.reserveForm-submit {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #111;
+  font-size: 1.0625rem;
+  line-height: 1.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.reserveForm-submit:hover,
+.reserveForm-submit:active {
+  color: #111;
+  background: #fff;
+}
+
+.footer-info {
+  flex: 2 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TODO: create reserve media queries 
+  also adjust footer-info positioning
+*/
 
 @media (max-width: 1295px) {
   .events-cta:link,

@@ -4,10 +4,14 @@ import topLeftCurve from "/pattern-curve-top-left.svg";
 import topRightCurve from "/pattern-curve-top-right.svg";
 import arrowIcon from "/icons/icon-arrow.svg";
 import checkMark from "/icons/icon-check.svg";
+import plus from "/icons/icon-plus.svg";
+import minus from "/icons/icon-minus.svg";
 
 document.querySelector(
   "#dine-logo--reserve"
 ).innerHTML = `<img src="${dineLogo}" />`;
+
+document.querySelector(".footer-logo").innerHTML = `<img src="${dineLogo}" />`;
 
 document.querySelector(
   ".dropdown-arrow"
@@ -16,6 +20,9 @@ document.querySelector(
 document.querySelectorAll(".check").forEach((item) => {
   item.innerHTML = `<img src="${checkMark}" />`;
 });
+
+document.querySelector(".increment").innerHTML = `<img src="${plus}" />`;
+document.querySelector(".decrement").innerHTML = `<img src="${minus}" />`;
 
 const fullName = document.querySelector("#fullName");
 const nameContainerClasses = fullName.closest("div").classList;
@@ -35,7 +42,15 @@ const dropdownValue = document.querySelector(".dropdown-value");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 const dropdownArrow = document.querySelector(".dropdown-arrow");
 const dropdownItems = document.querySelectorAll(".dropdown-item");
+const partySize = document.querySelector(".partySize");
+const partySizeValue = document.querySelector(".partySize-value");
 const reserveForm = document.querySelector(".reserveForm");
+
+const addLeadZero = (current) => {
+  if (current.value.trim() !== "" && +current.value < 10) {
+    current.value = `0${current.value}`;
+  }
+};
 
 reserveForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -105,24 +120,47 @@ reserveForm.addEventListener("submit", (event) => {
   });
   nameContainerClasses.remove("error");
   emailContainerClasses.remove("error");
-  dateContainer.remove("error");
-  /* Rmove when done */
-  console.log("form submitted!");
+  dateContainer.classList.remove("error");
+
+  //TODO: form submit logic
 });
 
 reserveForm.addEventListener("focusout", (event) => {
+  console.log("focusout triggered!");
   if (!event.target.closest("input")) {
     return;
   }
-  const currentContainer = event.target.parentElement;
+
+  let currentContainer = event.target.parentElement;
+  //need to go to grandparent if input is date or time
+  if (
+    currentContainer.classList.contains("date-inputContainer") ||
+    currentContainer.classList.contains("time-inputContainer")
+  ) {
+    currentContainer = currentContainer.parentElement;
+  }
   const childErrorMEssage = currentContainer.querySelector(".errorMessage");
+
   currentContainer.classList.remove("error");
   if (childErrorMEssage !== null) {
     childErrorMEssage.remove();
   }
 });
 
-/* TODO: need to work on handling case where user unfocuses without selecting */
+//dropdown cancel handler
+dropdownBtn.addEventListener("focusout", (event) => {
+  if (
+    event.target.classList.contains("dropdown-btn") &&
+    event.relatedTarget === null
+  ) {
+    return;
+  }
+
+  dropdownMenu.classList.toggle("hidden");
+  dropdownArrow.classList.toggle("dropdown-arrow--active");
+});
+
+//dropdown button handler
 dropdownBtn.addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -134,6 +172,7 @@ dropdownBtn.addEventListener("click", (event) => {
   dropdownMenu.classList.toggle("hidden");
 });
 
+//dropdown selection handler
 dropdownMenu.addEventListener("click", (event) => {
   //only activate event if user clicks on li
   const currentSelection = event.target.closest("li");
@@ -150,5 +189,42 @@ dropdownMenu.addEventListener("click", (event) => {
   //remove check hidden from selected li, make dropdown hidden, and change current value to selected value
   currentSelection.classList.remove("check--hidden");
   dropdownMenu.classList.toggle("hidden");
+  dropdownArrow.classList.toggle("dropdown-arrow--active");
   dropdownValue.innerHTML = itemValue;
+});
+
+partySize.addEventListener("click", (event) => {
+  event.preventDefault();
+  const current = event.target.closest("button");
+
+  if (!event.target.closest("button")) {
+    return;
+  }
+
+  let currentParty = +partySizeValue.textContent;
+  if (current.classList.contains("decrement")) {
+    if (currentParty === 2) {
+      return;
+    }
+    partySizeValue.innerHTML = --currentParty;
+  }
+  if (current.classList.contains("increment")) {
+    partySizeValue.innerHTML = ++currentParty;
+  }
+});
+
+month.addEventListener("focusout", () => {
+  addLeadZero(month);
+});
+
+dateContainer.addEventListener("focusout", () => {
+  addLeadZero(day);
+});
+
+hour.addEventListener("focusout", () => {
+  addLeadZero(hour);
+});
+
+minute.addEventListener("focusout", () => {
+  addLeadZero(minute);
 });
