@@ -122,7 +122,7 @@ reserveForm.addEventListener("submit", (event) => {
   emailContainerClasses.remove("error");
   dateContainer.classList.remove("error");
 
-  //TODO: form submit logic
+  //TODO: form submission logic
 });
 
 reserveForm.addEventListener("focusout", (event) => {
