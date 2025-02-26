@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/dine-restaurant/dine.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=League+Spartan:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Reservations</title>
+    <script type="module" crossorigin src="/dine-restaurant/assets/nested-fNmqP-Eg.js"></script>
+    <link rel="modulepreload" crossorigin href="/dine-restaurant/assets/dine-CJIPtnLE.js">
+    <link rel="stylesheet" crossorigin href="/dine-restaurant/assets/dine-4hI_I6yR.css">
+  </head>
+  <body>
+    <header class="reserveHeader">
+      <div class="reserveHero">
+        <a class="logo" id="dine-logo--reserve" href="/index.html"></a>
+        <div class="reserveHero-textbody">
+          <h1>Reservations</h1>
+          <p>
+            We can't wait to host you. If you have any special requirements
+            please feel free to call us on the phone number below. We'll be
+            happy to accommodate you.
+          </p>
+          <a class="hero-cta" id="hero-cta--reserve" href="#reservePlace"
+            >Reserve place</a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="reserveMain">
+      <div class="reserveContainer">
+        <div class="reserve-positionContainer">
+          <form action="" class="reserveForm" id="reservePlace">
+            <div class="inputContainer">
+              <input
+                type="text"
+                name="fullName"
+                id="fullName"
+                placeholder="Name"
+              />
+            </div>
+            <div class="inputContainer">
+              <input type="email" name="email" id="email" placeholder="Email" />
+            </div>
+            <fieldset class="dateContainer">
+              <div class="dateLegend">
+                <legend>Pick a date</legend>
+              </div>
+              <div class="date-inputContainer">
+                <input type="text" name="month" id="month" placeholder="MM" />
+                <input type="text" name="day" id="day" placeholder="DD" />
+                <input type="text" name="year" id="year" placeholder="YYYY" />
+              </div>
+            </fieldset>
+            <fieldset class="timeContainer">
+              <div class="timeLegend">
+                <legend>Pick a time</legend>
+              </div>
+              <div class="time-inputContainer">
+                <input type="text" name="hour" id="hour" placeholder="09" />
+                <input type="text" name="minute" id="minute" placeholder="00" />
+                <div class="custom-dropdown">
+                  <button class="dropdown-btn">
+                    <span class="dropdown-value">AM</span>
+                    <span class="dropdown-arrow"></span>
+                  </button>
+                  <ul class="dropdown-menu hidden">
+                    <li class="dropdown-item">
+                      <span class="check"></span>
+                      <span class="item-value">AM</span>
+                    </li>
+                    <li class="dropdown-item check--hidden">
+                      <span class="check"></span>
+                      <span class="item-value">PM</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </fieldset>
+            <div class="partySize">
+              <button class="decrement"></button>
+              <p>
+                <span class="partySize-value">2</span>
+                <span>people</span>
+              </p>
+              <button class="increment"></button>
+            </div>
+            <button class="reserveForm-submit">Make reservation</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <a href="/index.html" class="footer-logo"></a>
+        <div class="footer-info">
+          <div class="contact">
+            <p>Marthwaite, Sedbergh</p>
+            <p>Cumbria</p>
+            <p>+00 44 123 4567</p>
+          </div>
+          <div class="hours">
+            <p>Open Times</p>
+            <p>Mon - Fri: 9:00 AM - 10:00 PM</p>
+            <p>Sat - Sun: 9:00 AM - 11:30 PM</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
