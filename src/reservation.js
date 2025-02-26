@@ -1,7 +1,5 @@
 import "./style.css";
 import dineLogo from "/dine.svg";
-import topLeftCurve from "/pattern-curve-top-left.svg";
-import topRightCurve from "/pattern-curve-top-right.svg";
 import arrowIcon from "/icons/icon-arrow.svg";
 import checkMark from "/icons/icon-check.svg";
 import plus from "/icons/icon-plus.svg";
@@ -52,12 +50,26 @@ const addLeadZero = (current) => {
   }
 };
 
+const resetForm = () => {
+  fullName.value = "";
+  email.value = "";
+  month.value = "";
+  day.value = "";
+  year.value = "";
+  hour.value = "";
+  minute.value = "";
+  dropdownValue.innerHTML = "AM";
+  dropdownItems.forEach((item) => {
+    item.classList.add("check--hidden");
+  });
+  dropdownItems[0].classList.remove("check--hidden");
+  partySizeValue.innerHTML = "2";
+};
+
 reserveForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  /* TODO: form vaildation logic after user submits */
   /* if any fields are not filled out then initiate error checking */
-  /* Reset all values in inputs to default */
   if (
     fullName.value.trim() === "" ||
     email.value.trim() === "" ||
@@ -122,7 +134,11 @@ reserveForm.addEventListener("submit", (event) => {
   emailContainerClasses.remove("error");
   dateContainer.classList.remove("error");
 
-  //TODO: form submission logic
+  alert(
+    `Thank you ${fullName.value}, your reservation for a party of ${partySizeValue.innerHTML} has been set for ${month.value} ${day.value}, ${year.value} at ${hour.value}:${minute.value}${dropdownValue.innerHTML} and a confirmation email has been sent to ${email.value}.`
+  );
+
+  resetForm();
 });
 
 reserveForm.addEventListener("focusout", (event) => {

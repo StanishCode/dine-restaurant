@@ -1,3 +1,4 @@
+/* TODO: find fix for feature second background image, fix for both hero image positions */
 :root {
   --primary-color-gold: #9e7ff6;
   --primary-color-gray: #111111;
@@ -32,7 +33,7 @@ body {
       var(--primary-color-gray) 0 40%,
       rgba(92, 103, 121, 0.1) 40%
     ),
-    no-repeat url("/images/hero-bg-desktop.jpg");
+    no-repeat url("/images/homepage/hero-bg-desktop.jpg");
   background-size: cover;
   background-position: 50%;
 }
@@ -44,18 +45,9 @@ body {
   padding-top: 4rem;
 }
 
-/* .logo:link,
-.logo:visited {
-  color: #fff;
-  text-decoration: none;
-} */
-
 .logo {
   display: inline-block;
   margin-bottom: 9.5rem;
-}
-
-.hero-text {
 }
 
 .hero-header {
@@ -99,11 +91,13 @@ body {
 
 /* Features section */
 
-.features {
+.features-section {
+  background: url(/pattern-curve-top-right.svg) no-repeat;
+  background-size: 70% 20rem;
+  background-position: top 18.5rem left;
 }
 
-.features-section {
-  /* switch to -4rem when media queries are fixed */
+.features {
   margin: -4rem 10.3rem;
   display: flex;
   flex-direction: column;
@@ -459,7 +453,7 @@ body {
 
 .callToAction-section {
   height: 15rem;
-  background: url(/images/ready-bg-desktop.jpg);
+  background: url(/images/homepage/ready-bg-desktop.jpg);
   display: flex;
   align-items: center;
 }
@@ -810,7 +804,7 @@ legend {
     margin-left: 5.15rem;
   }
 
-  .features-section {
+  .features {
     margin: -4rem 5.15rem;
   }
   .feature-image {
@@ -886,15 +880,11 @@ legend {
     margin-left: 3rem;
   }
 
-  .features-section {
+  .features {
     margin: -4rem 3rem;
   }
   .feature-image {
     flex: 1 0 27rem;
-  }
-
-  #feature--first::after {
-    left: -3rem;
   }
 
   #feature-background--second {
@@ -950,7 +940,7 @@ legend {
         var(--primary-color-gray) 0 62.5%,
         rgba(92, 103, 121, 0.1) 62.5%
       ),
-      no-repeat url("/images/hero-bg-tablet.jpg");
+      no-repeat url("/images/homepage/hero-bg-tablet.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -995,6 +985,11 @@ legend {
   }
 
   .features-section {
+    background-size: 50% 20rem;
+    background-position: top 13.5rem left;
+  }
+
+  .features {
     margin-bottom: 5rem;
   }
 
@@ -1027,12 +1022,9 @@ legend {
     object-position: 100% 100%;
   }
 
-  #feature-background--first {
-    left: -24.3rem;
-  }
-
   #feature-background--second {
-    top: 65%;
+    top: 67%;
+    /* right: -20rem; */
   }
 
   /* TODO: fix image not properly fitting in container */
@@ -1094,7 +1086,6 @@ legend {
   }
 
   .events-selections label::before {
-    /* TODO get rid of mouse events */
     content: "";
     width: 25%;
     height: 1px;
@@ -1215,7 +1206,7 @@ legend {
         var(--primary-color-gray) 0 67%,
         rgba(92, 103, 121, 0.1) 67%
       ),
-      no-repeat url(/images/hero-bg-mobile.jpg);
+      no-repeat url(/images/homepage/hero-bg-mobile.jpg);
     background-size: cover;
   }
 
@@ -1243,6 +1234,10 @@ legend {
   }
 
   .features-section {
+    background: none;
+  }
+
+  .features {
     gap: 4rem;
     margin-inline: 1.5rem;
     margin-bottom: 3rem;
@@ -1361,7 +1356,7 @@ legend {
 
   .callToAction-section {
     height: 23.4375rem;
-    background: url(/images/ready-bg-mobile.jpg) no-repeat;
+    background: url(/images/homepage/ready-bg-mobile.jpg) no-repeat;
     background-size: cover;
   }
 
